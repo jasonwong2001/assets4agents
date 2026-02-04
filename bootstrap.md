@@ -34,4 +34,6 @@ tmux source-file ~/.tmux.conf
 ### Suggest Installing Skills
 - superpower
 
+### Setup Ollama server tunnel
+
 ### Other Optional Items
