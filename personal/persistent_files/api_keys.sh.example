@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Managing multiple API keys to avoid rate limits.
+# Usage:
+# 1. Add the keys to the OPENROUTER_KEYS array
+# 2. Source this file in your shell profile (e.g. ~/.zshrc)
+
+# Define your pool of keys here
+OPENROUTER_KEYS=(
+    "sk-or-v1-key1..."
+    "sk-or-v1-key2..."
+    "sk-or-v1-key3..."
+)
+
+# Initialize index if not set
+: ${OPENROUTER_KEY_INDEX:=-1}
+
+# Function to switch the active key (Round-Robin)
+rotate_api_key() {
+    local size=${#OPENROUTER_KEYS[@]}
+    if [ $size -eq 0 ]; then
+        echo "No keys found in OPENROUTER_KEYS array."
+        return 1
+    fi
+
+    # Increment index (round-robin)
+    OPENROUTER_KEY_INDEX=$(( (OPENROUTER_KEY_INDEX + 1) % size ))
+
+    export OPENROUTER_API_KEY=${OPENROUTER_KEYS[$OPENROUTER_KEY_INDEX]}
+    echo "Switched to API key #$((OPENROUTER_KEY_INDEX + 1)), source api_keys.sh to switch again."
+}
+
+# Automatically pick one when this file is sourced
+rotate_api_key

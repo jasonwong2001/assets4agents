@@ -1,0 +1,21 @@
+# Local secrets
+personal/persistent_files/api_keys.sh
+personal/oneshot_files/shell-envs.sh
+*.local
+.env
+.env.*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Agent specific local files
+.claude/
+.gemini/
+.codex/
+.qwen/
