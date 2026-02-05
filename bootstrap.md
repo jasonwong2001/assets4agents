@@ -35,7 +35,10 @@ Link the injected assets into your primary instruction flow.
 2.  **Inject persistent_contents.md:**
     -   Check if the file already contains the marker `--- From assets4agents ---`.
     -   If not, append the marker followed by the contents of `personal/persistent_contents.md` to the end of your index file.
-3.  **Self-Verify:** Confirm that you can now read the persistent files (like `human_profile.md`) directly from your home directory.
+3.  **Index Persistent Files:**
+    -   List all files in your Agent Home that were symlinked from `personal/persistent_files/`.
+    -   In your index file, within the `## Persistent Files Index` section (inside the `<!-- INDEX_START -->` and `<!-- INDEX_END -->` markers), create a list of these files with brief descriptions or just the filenames as links.
+4.  **Self-Verify:** Confirm that you can now read the persistent files (like `human_profile.md`) directly from your home directory.
 
 ## Phase 4: Quality of Life (Optional)
 
@@ -53,4 +56,5 @@ Link the injected assets into your primary instruction flow.
 - [ ] All `personal/persistent_files/` linked to Home.
 - [ ] Secrets seeded from templates (if any).
 - [ ] `persistent_contents.md` injected into the primary instruction file.
+- [ ] Persistent files indexed in the primary instruction file.
 - [ ] Tmux settings suggested/applied.
