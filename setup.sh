@@ -1,9 +1,13 @@
 #!/bin/bash
 set -e
 
-# setup.sh - Automate agent environment bootstrapping
+# setup.sh - DEPRECATED
+# NOTE: This script is deprecated in favor of the agent-driven SOP in bootstrap.md.
+# Agents should follow the guidelines in bootstrap.md for a more robust setup.
+# -----------------------------------------------------------------------------
 
-echo "--- Initializing Agent Environment ---"
+echo "--- Initializing Agent Environment (Legacy Mode) ---"
+echo "WARNING: This script is deprecated. Refer to bootstrap.md for the new SOP."
 
 # 1. Secret Seeding
 created_files=()
