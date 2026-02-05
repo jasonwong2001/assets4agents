@@ -44,7 +44,7 @@ Link the injected assets into your primary instruction flow.
     set -g mouse on
     set -g history-limit 200000
     ```
-2.  **Skill Installation:** Check if the human wants to install relevant agent skills (e.g., `superpower`).
+2.  **Skill Installation:** Prompt the human to install/migrate agent skills.
 
 ---
 
